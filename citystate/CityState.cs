@@ -7,26 +7,33 @@ namespace citystate
 	/// <summary>
 	/// This is the main type for your game.
 	/// </summary>
-	public class Game1 : Game
+	public class CityState : Game
 	{
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 
-		public Game1()
+		public CityState()
 		{
 			graphics = new GraphicsDeviceManager(this);
+			graphics.PreferredBackBufferWidth = 1000;
+			graphics.PreferredBackBufferHeight = 600;
+			//graphics.ApplyChanges();
+
 			Content.RootDirectory = "Content";
 		}
 
 		/// <summary>
 		/// Allows the game to perform any initialization it needs to before starting to run.
 		/// This is where it can query for any required services and load any non-graphic
-		/// related content.  Calling base.Initialize will enumerate through any components
+		/// related content. Calling base.Initialize will enumerate through any components
 		/// and initialize them as well.
 		/// </summary>
 		protected override void Initialize()
 		{
-			// TODO: Add your initialization logic here
+			/* DEVELOPMENT CODE */
+			var form = (System.Windows.Forms.Form)System.Windows.Forms.Control.FromHandle(this.Window.Handle);
+			form.Location = new System.Drawing.Point(2000, 300);
+			/* end DEVELOPMENT CODE */
 
 			base.Initialize();
 		}
